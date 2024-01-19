@@ -1,0 +1,16 @@
+def ievadit_un_ierakstit_faila():
+    try:
+        lietotaja_vards = input("Ievadiet savu vārdu: ")
+        
+        faila_cels = "lietotajs.txtt" 
+        
+        with open(faila_cels, 'w', encoding='utf-8') as faila_atslega:
+            faila_atslega.write(lietotaja_vards)
+        
+        print(f"Vārds '{lietotaja_vards}' ir ierakstīts failā '{faila_cels}'") 
+    except IOError as e:
+        print(f"Rakstīšanas kļūda: {e}")
+    except Exception as e:
+        print(f"Kļūda: {e}")
+
+ievadit_un_ierakstit_faila()
