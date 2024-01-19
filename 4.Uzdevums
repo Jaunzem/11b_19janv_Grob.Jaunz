@@ -1,0 +1,17 @@
+def nolasit_un_izdrukats():
+    try:
+        faila_nosaukums = input("Ievadiet faila nosaukumu: ")
+        
+        paplasinajums = input("Ievadiet faila paplašinājumu (piemēram, txt): ")
+        
+        faila_ceels = f"{faila_nosaukums}.{paplasinajums}"
+        with open(faila_ceels, 'r', encoding='utf-8') as faila_atslega:
+            saturs = faila_atslega.read()
+            print(f"Faila '{faila_ceels}' saturs:")
+            print(saturs)
+    except FileNotFoundError:
+        print(f"Faila '{faila_ceels}' nav atrasts.")
+    except Exception as e:
+        print(f"Kļūda: {e}")
+
+nolasit_un_izdrukats()
